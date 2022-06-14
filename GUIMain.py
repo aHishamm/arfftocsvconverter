@@ -15,5 +15,6 @@ while True:
     if event == sg.WIN_CLOSED or event == 'Cancel':
         break 
     if event == 'Convert': 
-        csvList = arfftoCsv.toCsv(layout[1])
+        csvList = arfftoCsv.main(path_to_arff)
+        #csvList = arfftoCsv.main(layout[1])
 window.close() 
