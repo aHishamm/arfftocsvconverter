@@ -1,6 +1,6 @@
 # Importing library
 import os
-
+import pandas as pd 
 # Getting all the arff files from the current directory
 files = [arff for arff in os.listdir('.') if arff.endswith(".arff")]
 
@@ -37,3 +37,10 @@ def main(path):
         new = toCsv(content)
         with open(name + ".csv", "w") as outFile:
             outFile.writelines(new)
+
+def transposition(path): 
+    with open(path,'r') as inFile: 
+        name, ext = os.path.splitext(inFile.name)
+        df = pd.read_csv(path) 
+        transposed_df = df.T 
+        transposed_df.to_csv(name+'T.csv',index=True)
