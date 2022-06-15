@@ -2,7 +2,6 @@ import arfftoCsv
 import PySimpleGUI as sg
 
 sg.theme('Dark Red')
-
 layout = [[sg.Text('Select an .arff/.csv file: ')], 
         [sg.Input(key='-FILE-',visible=False,enable_events=True),sg.FileBrowse()], 
         [sg.Button('Convert/Transpose'),sg.Button('Cancel')]]
@@ -21,5 +20,4 @@ while True:
         if path_to_file.endswith('.csv'): 
             print('The file that is selected is a csv file')
             csvTranspose = arfftoCsv.transposition(path_to_file)
-        #csvList = arfftoCsv.main(layout[1])
 window.close() 

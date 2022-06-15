@@ -1,9 +1,6 @@
 # Importing library
 import os
 import pandas as pd 
-# Getting all the arff files from the current directory
-files = [arff for arff in os.listdir('.') if arff.endswith(".arff")]
-
 # Function for converting arff list to csv list
 def toCsv(text):
     data = False
